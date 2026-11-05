@@ -1,0 +1,2 @@
+una lista de palabras posibles para el juego (puedes empezar con 10-20).
+
