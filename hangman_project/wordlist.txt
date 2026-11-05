@@ -1,2 +1,20 @@
-una lista de palabras posibles para el juego (puedes empezar con 10-20).
-
+elefante
+mariposa
+montana
+ventana
+guitarra
+planeta
+estrella
+chocolate
+bicicleta
+biblioteca
+jirafa
+universo
+manzana
+tortuga
+aventura
+dinosaurio
+helicoptero
+arcoiris
+laberinto
+perro
