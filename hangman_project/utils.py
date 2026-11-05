@@ -10,4 +10,4 @@ def get_random_word():
         return random.choice(words).strip()
 
 get_random_word()
-print(get_random_word())
+
