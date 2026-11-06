@@ -10,24 +10,20 @@ def main():
     word = get_random_word()
     game = HangmanGame(word)
 
-    while True:
+    while game.errors < game.max_errors and set(game.word) != set(game.guessed_letters):
         letter = input("Ingresa una letra: ").strip().lower()
 
         if len(letter) != 1 or not letter.isalpha():
             print("Entrada inválida. Ingresa una sola letra.")
 
-        elif letter in game.guessed_letters:
+        elif letter in game.ingressed_letters:
             print("Ya ingresaste esa letra. Intenta con otra.")
 
         else:
-            game.guessed_letters.append(letter)
+            game.process_guess(letter)
+            game.display_progress()
 
-            if letter in game.word:
-                print(f"¡Correcto! La letra {letter} está en la palabra.")
-            else:
-                game.errors += 1
-                print(f"Incorrecto. La letra {letter} no está en la palabra.")
-
-
+print("¡Bienvenido al juego del Ahorcado!")
+print("Adivina la palabra antes de cometer 6 errores.")
 if __name__ == "__main__":
     main()
