@@ -6,7 +6,7 @@ class HangmanGame:
     """Representa el estado de una partida."""
 
     def __init__(self, word):
-        self.word = word
+        self.word = word.lower()
         self.guessed_letters = []
         self.ingressed_letters = set()
         self.max_errors = 6
@@ -14,7 +14,9 @@ class HangmanGame:
 
     def process_guess(self, letter):
         """Procesa la letra ingresada por el jugador."""
+
         self.ingressed_letters.add(letter)
+
         if letter in self.word:
             print(f"¡Correcto! La letra {letter} está en la palabra.")
             self.guessed_letters.append(letter)
@@ -37,3 +39,11 @@ class HangmanGame:
         print(f"Letras ingresadas: {', '.join(self.ingressed_letters)}")
         print(f"Errores: {self.errors}/{self.max_errors}")
         print(f"Palabra: {self.word}")
+
+    def is_won(self):
+        """Verifica si el jugador ha ganado."""
+        return all(letter in self.guessed_letters for letter in self.word)
+
+    def is_lost(self):
+        """Verifica si el jugador ha perdido."""
+        return self.errors >= self.max_errors

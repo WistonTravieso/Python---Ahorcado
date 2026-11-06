@@ -4,6 +4,7 @@
 from utils import get_random_word
 from game import HangmanGame
 
+print("¡Bienvenido al juego del Ahorcado!")
 
 def main():
     """Inicia el juego y solicita letras al jugador."""
@@ -22,8 +23,11 @@ def main():
         else:
             game.process_guess(letter)
             game.display_progress()
+            
+    if game.is_won():
+        print("¡Ganaste!")
+    if game.is_lost():
+        print("¡Perdiste!")
 
-print("¡Bienvenido al juego del Ahorcado!")
-print("Adivina la palabra antes de cometer 6 errores.")
 if __name__ == "__main__":
     main()
