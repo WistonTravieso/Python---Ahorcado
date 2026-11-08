@@ -34,7 +34,17 @@ def main():
             elif game.is_lost():
                 print("Fin del juego")
                 break
-
+    """Permite que los jugadores vuelvan a jugar después de terminar."""
+    while True:
+        replay = input("¿Quieres jugar de nuevo? (s/n): ").strip().lower()
+        if replay == 's':
+            main()  # Reinicia el juego
+            break
+        elif replay == 'n':
+            print("Gracias por jugar. ¡Hasta luego!")
+            break
+        else:
+            print("Entrada inválida. Por favor ingresa 's' para sí o 'n' para no.")
 
 if __name__ == "__main__":
     main()
