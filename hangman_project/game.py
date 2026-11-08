@@ -16,7 +16,7 @@ class HangmanGame:
         display_word = []
 
         for letter in self.word:
-            if letter in self.guessed_letters:
+            if not letter.isalpha() or letter in self.guessed_letters:
                 display_word.append(letter)
             else:
                 display_word.append('_')
@@ -38,7 +38,7 @@ class HangmanGame:
     def is_won(self):
         """Comprueba si se adivinaron todas las letras."""
         return all(letter in self.guessed_letters
-                   for letter in self.word)
+                   for letter in self.word if letter.isalpha())
 
     def is_lost(self):
         """Comprueba si se agotaron los intentos."""
