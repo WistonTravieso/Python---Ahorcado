@@ -22,7 +22,7 @@ class HangmanGame:
                 display_word.append('_')
 
         print(f"Palabra: {' '.join(display_word)}")
-        print(f"Letras adivinadas: {', '.join(self.guessed_letters)}")
+        print(f"Letras ingresadas: {', '.join(self.guessed_letters)}")
         print(f"Intentos restantes: {self.max_errors - self.errors}")
 
     def process_guess(self, letter):
