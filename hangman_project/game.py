@@ -20,7 +20,59 @@ class HangmanGame:
                 display_word.append(letter)
             else:
                 display_word.append('_')
-
+        """ Muestra un gráfico sencillo del ahorcado en ASCII."""
+        hangman_stages = [
+            """
+             +---+
+             |   |
+                 |
+                 |
+                 |
+            =========""",
+            """
+             +---+
+             |   |
+             O   |
+                 |
+                 |
+            =========""",
+            """
+             +---+
+             |   |
+             O   |
+             |   |
+                 |
+            =========""",
+            """
+             +---+
+             |   |
+             O   |
+            /|   |
+                 |
+            =========""",
+            """
+             +---+
+             |   |
+             O   |
+            /|\\  |
+                 |
+            =========""",
+            """
+             +---+
+             |   |
+             O   |
+            /|\\  |
+            /    |
+            =========""",
+            """
+             +---+
+             |   |
+             O   |
+            /|\\  |
+            / \\  |
+            ========="""
+        ]
+        print(hangman_stages[self.errors])
         print(f"Palabra: {' '.join(display_word)}")
         print(f"Letras ingresadas: {', '.join(self.guessed_letters)}")
         print(f"Intentos restantes: {self.max_errors - self.errors}")
