@@ -44,7 +44,11 @@ def main():
             print("Gracias por jugar. ¡Hasta luego!")
             break
         else:
-            print("Entrada inválida. Por favor ingresa 's' para sí o 'n' para no.")
+            print(
+                "Entrada inválida. Ingresa 's' para sí "
+                "o 'n' para no."
+            )
+
 
 if __name__ == "__main__":
     main()
